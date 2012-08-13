@@ -2,9 +2,12 @@
 
 module Translit
   def self.convert(text, enforce_language = nil)
-    language = detect_input_language(text.split(/\s+/).first)
-
-    return text if language == enforce_language
+    language = if enforce_language
+      enforce_language
+    else
+      detect_input_language(text.split(/\s+/).first)
+    end
+    # return text if language == enforce_language
 
     map = self.send(language.to_s).sort_by {|k,v| v.length <=>  k.length}
     map.each do |translit_key, translit_value|
