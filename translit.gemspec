@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.date = %q{2010-09-28}
   s.description = %q{Transliteration between cyrillic <-> latin | Транслитерация между кирилицой и латиницой }
   s.email = %q{tjbladez@gmail.com}
-  s.files = FileList['{bin,lib}/**/*', 'README.markdown'].to_a
+  s.files = Dir['lib/**/*.rb','bin/**/*.rb','README.markdown']
   s.has_rdoc = false
   s.bindir = 'bin'
   s.executables = %w{translit}
